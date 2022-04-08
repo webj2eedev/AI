@@ -15,9 +15,12 @@ class Model(object):
         tensorflow Graph.
     """
 
+
     DATASET_FOLDER = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), "dataset")
     DATASET_FILE = os.path.join(DATASET_FOLDER, "dataset.dt")
+    DATASET_FILE_EXTENSION = ".java"
+
     CHECKPOINT_FOLDER = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), "checkpoints")
     TENSORBOARD_LOG = os.path.join(os.path.dirname(
@@ -134,7 +137,7 @@ class Model(object):
         # List of file in the dataset directory
         all_file = os.listdir(Model.DATASET_FOLDER)
         # Filter : Select all c file
-        all_file_name = np.array([f for f in all_file if f.find(".c") != -1])
+        all_file_name = np.array([f for f in all_file if f.find(Model.DATASET_FILE_EXTENSION) != -1])
 
         content = ""
         for name in all_file_name:

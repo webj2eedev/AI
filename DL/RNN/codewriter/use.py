@@ -69,7 +69,7 @@ class Use(Model):
 
 if __name__ == '__main__':
     # arguments = docopt(__doc__)
-    use_model = Use(ckpt = "./checkpoints/dump_model_10.ckpt.data-00000-of-00001") # arguments["<ckpt>"]
+    use_model = Use(ckpt = "./checkpoints/checkpoint") # arguments["<ckpt>"]
     code = use_model.create_code(4000)
 
     with open("c_file.c", "w+") as s:
