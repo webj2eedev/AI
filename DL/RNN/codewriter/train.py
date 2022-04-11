@@ -71,4 +71,4 @@ class Train(Model):
 
 if __name__ == '__main__':
     tr = Train()
-    tr.train_model(1) # 1000000
+    tr.train_model(10000) # 1000000

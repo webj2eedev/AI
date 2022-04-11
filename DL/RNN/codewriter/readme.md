@@ -1,4 +1,10 @@
-﻿## RNN 读《伊索寓言》 来预测下一个词汇
+﻿##
+dnf install python3
+pip3 install --upgrade pip
+pip3 install --user  tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+## RNN 读《伊索寓言》 来预测下一个词汇
 
 用示例短文（出自《伊索寓言》）训练一个RNN来预测下一个单词（就像输入法里常见的“联想”功能。
 
