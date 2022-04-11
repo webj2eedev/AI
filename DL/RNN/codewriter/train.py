@@ -48,6 +48,7 @@ class Train(Model):
     def train_model(self, epochs):
         """
             Train the model
+
             **input : **
                 *epochs (int) Numbers of epoch
         """
@@ -70,4 +71,4 @@ class Train(Model):
 
 if __name__ == '__main__':
     tr = Train()
-    tr.train_model(10) # 1000000
+    tr.train_model(1) # 1000000

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Genearte a new c file.
+
 Usage:
   use.py <ckpt>
+
 Options:
   -h --help                 Show this help.
   <ckpt>                    Path to the ckpt file to use

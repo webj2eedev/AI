@@ -12,6 +12,7 @@ steam_handler = logging.StreamHandler()
 steam_handler.setLevel(logging.DEBUG)
 logger.addHandler(steam_handler)
 
+
 class Logger(object):
     def __init__(self, label):
         super(Logger, self).__init__()

@@ -15,12 +15,9 @@ class Model(object):
         tensorflow Graph.
     """
 
-
     DATASET_FOLDER = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), "dataset")
     DATASET_FILE = os.path.join(DATASET_FOLDER, "dataset.dt")
-    DATASET_FILE_EXTENSION = ".java"
-
     CHECKPOINT_FOLDER = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), "checkpoints")
     TENSORBOARD_LOG = os.path.join(os.path.dirname(
@@ -137,7 +134,7 @@ class Model(object):
         # List of file in the dataset directory
         all_file = os.listdir(Model.DATASET_FOLDER)
         # Filter : Select all c file
-        all_file_name = np.array([f for f in all_file if f.find(Model.DATASET_FILE_EXTENSION) != -1])
+        all_file_name = np.array([f for f in all_file if f.find(".c") != -1])
 
         content = ""
         for name in all_file_name:
@@ -161,15 +158,16 @@ class Model(object):
     def build_lstm(self, inputs, keep_prob):
         """
             Build our RNN model
+
             **input : **
-                *inputs (tf.Placeholder)
-                *keep_prob (tf.Placeholder)
+                *inputs (tf.compat.v1.Placeholder)
+                *keep_prob (tf.compat.v1.Placeholder)
             **return (Tuple (Tensor operation, Tensor operation, Tensor operation)) **
                 *cell_outputs : Outputs value of each LSTM cell
                 *initial_state : LSTM cell with all neurons set to zero.
                 *final_state : State values of the last cell.
         """
-        with tf.name_scope("LSTM"):
+        with tf.compat.v1.name_scope("LSTM"):
             def create_cell():
                 lstm = tf.compat.v1.nn.rnn_cell.BasicLSTMCell(self.HIDDEN_LAYER_SIZE)
                 drop = tf.compat.v1.nn.rnn_cell.DropoutWrapper(
@@ -178,9 +176,9 @@ class Model(object):
 
             cell = tf.compat.v1.nn.rnn_cell.MultiRNNCell(
                 [create_cell() for _ in range(self.LSTM_SIZE)])
-            initial_state = cell.zero_state(self.batch_size, tf.float32)
+            initial_state = cell.zero_state(self.batch_size, tf.compat.v1.float32)
 
-            x_one_hot = tf.one_hot(inputs, self.io_size)
+            x_one_hot = tf.compat.v1.one_hot(inputs, self.io_size)
             cell_outputs, final_state = tf.compat.v1.nn.dynamic_rnn(
                 cell, x_one_hot, initial_state=initial_state)
 
@@ -189,47 +187,49 @@ class Model(object):
     def build_output(self, cell_outputs):
         """
             Create an output layer at the top of our RNN model
+
             **input : **
                 *cell_outputs (Tensor operation) Outputs value of each LSTM cell
             **return (Tuple (Tensor operation, Tensor operation))
                 *softmax
                 *logits
         """
-        with tf.name_scope("graph_outputs"):
-            # seq_output = tf.concat(cell_outputs, axis=1, name="concat_all_cell_outputs")
-            x = tf.reshape(
+        with tf.compat.v1.name_scope("graph_outputs"):
+            #seq_output = tf.compat.v1.concat(cell_outputs, axis=1, name="concat_all_cell_outputs")
+            x = tf.compat.v1.reshape(
                 cell_outputs, [-1, self.HIDDEN_LAYER_SIZE], name="reshape_x")
 
-            with tf.name_scope('output_layer'):
-                w = tf.Variable(tf.compat.v1.truncated_normal(
+            with tf.compat.v1.name_scope('output_layer'):
+                w = tf.compat.v1.Variable(tf.compat.v1.truncated_normal(
                     (self.HIDDEN_LAYER_SIZE, self.io_size), stddev=0.1), name="weights")
-                b = tf.Variable(tf.zeros(self.io_size), name="bias")
-                tf.summary.histogram("weights", w)
-                tf.summary.histogram("bias", b)
+                b = tf.compat.v1.Variable(tf.compat.v1.zeros(self.io_size), name="bias")
+                tf.compat.v1.summary.histogram("weights", w)
+                tf.compat.v1.summary.histogram("bias", b)
 
-            logits = tf.add(tf.matmul(x, w), b, name="logits")
-            softmax = tf.nn.softmax(logits, name='predictions')
-            tf.summary.histogram("softmax", softmax)
+            logits = tf.compat.v1.add(tf.compat.v1.matmul(x, w), b, name="logits")
+            softmax = tf.compat.v1.nn.softmax(logits, name='predictions')
+            tf.compat.v1.summary.histogram("softmax", softmax)
 
         return softmax, logits
 
     def build_loss(self, logits, targets):
         """
             We use to measure our error : softmax_cross_entropy_with_logits
+
             **input : **
                 *logits (Tensor operation)
-                *targets (tf.Placeholder)
+                *targets (tf.compat.v1.Placeholder)
             ** return (Tensor operation) **
                 *loss : compute the loss of the model
         """
-        with tf.name_scope("cost"):
-            y_one_hot = tf.one_hot(targets, self.io_size, name="y_to_one_hot")
-            y_reshaped = tf.reshape(
+        with tf.compat.v1.name_scope("cost"):
+            y_one_hot = tf.compat.v1.one_hot(targets, self.io_size, name="y_to_one_hot")
+            y_reshaped = tf.compat.v1.reshape(
                 y_one_hot, logits.get_shape(), name="reshape_one_hot")
-            loss = tf.nn.softmax_cross_entropy_with_logits(
+            loss = tf.compat.v1.nn.softmax_cross_entropy_with_logits(
                 logits=logits, labels=y_reshaped)
-            loss = tf.reduce_mean(loss)
-            tf.summary.scalar('loss', loss)
+            loss = tf.compat.v1.reduce_mean(loss)
+            tf.compat.v1.summary.scalar('loss', loss)
 
         return loss
 
@@ -237,12 +237,13 @@ class Model(object):
         """
             Apply optimizer to the loss
             We choose for this model AdamOptimizer
+
             **input : **
                 *loss (Tensor operation) compute the loss of the model
             **return (Tensor operation) **
                 *optimizer : to into the session
         """
-        with tf.name_scope("train"):
+        with tf.compat.v1.name_scope("train"):
             adam = tf.compat.v1.train.AdamOptimizer(self.LR)
             optimizer = adam.minimize(loss)
 
@@ -251,15 +252,20 @@ class Model(object):
     def build_inputs(self):
         """
             Build all tensorflow placeholder
-            ** return (Tuple (tf.Placeholder, tf.Placeholder, tf.Placeholder))
+
+            ** return (Tuple (tf.compat.v1.Placeholder, tf.compat.v1.Placeholder, tf.compat.v1.Placeholder))
                 *Inputs placeholder
                 *Targets placeholder
                 *Probability to keep neurons during dropout
         """
-        with tf.name_scope("graph_inputs"):
+        with tf.compat.v1.name_scope("graph_inputs"):
             tf.compat.v1.disable_eager_execution()
-            inputs = tf.compat.v1.placeholder(tf.int32, [None, self.sequence_size], name='placeholder_inputs')
-            targets = tf.compat.v1.placeholder(tf.int32, [None, self.sequence_size], name='placeholder_targets')
-            keep_prob = tf.compat.v1.placeholder(tf.float32, name='placeholder_keep_prob')
+            
+            inputs = tf.compat.v1.placeholder(
+                tf.compat.v1.int32, [None, self.sequence_size], name='placeholder_inputs')
+            targets = tf.compat.v1.placeholder(
+                tf.compat.v1.int32, [None, self.sequence_size], name='placeholder_targets')
+            keep_prob = tf.compat.v1.placeholder(
+                tf.compat.v1.float32, name='placeholder_keep_prob')
 
         return inputs, targets, keep_prob
