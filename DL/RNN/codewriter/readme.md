@@ -2,6 +2,9 @@
 dnf install python3
 pip3 install --upgrade pip
 pip3 install --user  tensorflow -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip3 install --user  matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+matplotlib
 
 
 ## RNN 读《伊索寓言》 来预测下一个词汇
