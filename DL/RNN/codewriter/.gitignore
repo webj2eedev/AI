@@ -3,3 +3,5 @@ logs/
 .history/
 __pycache__/
 c_code.log
+c_file.c
+c_file.java
