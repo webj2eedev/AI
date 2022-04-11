@@ -290,3 +290,120 @@ Please use `keras.layers.RNN(cell)`, which is equivalent to this API
 Instructions for updating:
 Call initializer instance with the dtype argument instead of passing it to the constructor
 2022-03-31 14:53:30,929 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt.data-00000-of-00001
+2022-04-08 10:58:36,957 :: INFO :: Model::Loading dataset ...
+2022-04-08 10:58:36,958 :: INFO :: Model::Dataset loaded.
+2022-04-08 10:58:37,166 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 10:58:37,221 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 10:58:37,324 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 10:58:39,300 :: INFO :: Train::Init batches...
+2022-04-08 10:58:39,301 :: INFO :: Train::Batches are ready.
+2022-04-08 10:58:39,325 :: INFO :: Train::Save model...
+2022-04-08 10:58:40,033 :: INFO :: Train::Save model...
+2022-04-08 10:58:40,643 :: INFO :: Train::Save model...
+2022-04-08 10:58:41,256 :: INFO :: Train::Save model...
+2022-04-08 10:58:42,085 :: INFO :: Train::Save model...
+2022-04-08 10:58:42,775 :: INFO :: Train::Save model...
+2022-04-08 10:58:43,687 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\python\training\saver.py:1052: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2022-04-08 10:58:44,034 :: INFO :: Train::Save model...
+2022-04-08 10:58:45,080 :: INFO :: Train::Save model...
+2022-04-08 10:58:45,758 :: INFO :: Train::Save model...
+2022-04-08 10:58:46,378 :: INFO :: Train::Save model...
+2022-04-08 10:59:30,711 :: INFO :: Model::Loading dataset ...
+2022-04-08 10:59:30,711 :: INFO :: Model::Dataset loaded.
+2022-04-08 10:59:30,824 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 10:59:30,843 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 10:59:30,894 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 10:59:32,140 :: INFO :: Restoring parameters from ./checkpoints/checkpoint
+2022-04-08 11:01:14,227 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:01:14,228 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:01:14,365 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:01:14,387 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:01:14,446 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:01:15,693 :: INFO :: Restoring parameters from ./checkpoints
+2022-04-08 11:30:10,760 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:30:10,761 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:30:10,890 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:30:10,917 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:30:10,981 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:30:12,086 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt.meta
+2022-04-08 11:30:33,717 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:30:33,718 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:30:33,829 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:30:33,850 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:30:33,902 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:30:35,098 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt.index
+2022-04-08 11:31:06,341 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:31:06,345 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:31:06,472 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:31:06,494 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:31:06,562 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:31:07,768 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt.index
+2022-04-08 11:31:48,874 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:31:48,875 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:31:48,984 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:31:49,010 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:31:49,062 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:31:50,231 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt.data-00000-of-00001
+2022-04-08 11:32:36,043 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:32:36,045 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:32:36,212 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:32:36,241 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:32:36,354 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:32:37,476 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt
+2022-04-08 11:32:37,578 :: INFO :: Model::checkpoints succesfully loaded
+2022-04-08 11:33:33,728 :: INFO :: Model::Loading dataset ...
+2022-04-08 11:33:33,730 :: INFO :: Model::Dataset loaded.
+2022-04-08 11:33:33,888 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-08 11:33:33,937 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-08 11:33:34,032 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-08 11:33:35,782 :: INFO :: Restoring parameters from ./checkpoints/dump_model_10.ckpt
+2022-04-08 11:33:35,884 :: INFO :: Model::checkpoints succesfully loaded
+2022-04-11 08:27:41,956 :: INFO :: Model::Loading dataset ...
+2022-04-11 08:27:42,435 :: INFO :: Model::Dataset loaded.
+2022-04-11 08:27:42,610 :: WARNING :: `tf.nn.rnn_cell.MultiRNNCell` is deprecated. This class is equivalent as `tf.keras.layers.StackedRNNCells`, and will be replaced by that in Tensorflow 2.0.
+2022-04-11 08:27:42,641 :: WARNING :: From e:\AI\DL\RNN\codewriter\model.py:184: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+2022-04-11 08:27:42,705 :: WARNING :: From C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\keras\layers\legacy_rnn\rnn_cell_impl.py:760: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2022-04-11 08:27:44,121 :: INFO :: Train::Init batches...
+2022-04-11 08:27:44,130 :: INFO :: Train::Batches are ready.

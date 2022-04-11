@@ -1,2 +1,5 @@
 checkpoints/
 logs/
+.history/
+__pycache__/
+./c_code.log
