@@ -16,7 +16,8 @@ class Model(object):
     """
 
     DATASET_FOLDER = os.path.join(os.path.dirname(
-        os.path.abspath(__file__)), "dataset")
+        os.path.abspath(__file__)), "dataset_java")
+    DATASET_FILTER = ".java"
     DATASET_FILE = os.path.join(DATASET_FOLDER, "dataset.dt")
     CHECKPOINT_FOLDER = os.path.join(os.path.dirname(
         os.path.abspath(__file__)), "checkpoints")
@@ -134,12 +135,16 @@ class Model(object):
         # List of file in the dataset directory
         all_file = os.listdir(Model.DATASET_FOLDER)
         # Filter : Select all c file
-        all_file_name = np.array([f for f in all_file if f.find(".c") != -1])
+        all_file_name = np.array([f for f in all_file if f.find(Model.DATASET_FILTER) != -1])
 
         content = ""
         for name in all_file_name:
-            with open(os.path.join(Model.DATASET_FOLDER, name), "r") as f:
-                content += f.read() + "\n"
+            with open(os.path.join(Model.DATASET_FOLDER, name), "r", encoding='UTF-8') as f:
+                try:
+                    content += f.read() + "\n"
+                except UnicodeDecodeError as ex:
+                    print('file: %s' %(name))
+                    raise ex
 
         # Convert the string into a list of interger
         vocab = set(content)
