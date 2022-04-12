@@ -28,7 +28,7 @@ class Use(Model):
         Model.__init__(self, training=False, ckpt=ckpt)
 
         # self.code = [c for c in "\n\n static int"]
-        self.code = [c for c in "\n\n public class"]
+        self.code = [c for c in "package com."]
 
     def add_to_code(self, softmax):
         """
@@ -72,8 +72,8 @@ class Use(Model):
 
 if __name__ == '__main__':
     # arguments = docopt(__doc__)
-    use_model = Use(ckpt = "./checkpoints/dump_model_1.ckpt") # arguments["<ckpt>"]
-    code = use_model.create_code(4000)
+    use_model = Use(ckpt = "./checkpoints/dump_model_113.ckpt") # arguments["<ckpt>"]
+    code = use_model.create_code(5000)
 
     with open("c_file.java", "w+") as s:
         s.write(code)
